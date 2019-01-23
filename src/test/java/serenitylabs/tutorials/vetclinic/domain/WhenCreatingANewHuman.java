@@ -11,8 +11,8 @@ public class WhenCreatingANewHuman {
     public void deberia_tener_un_nombre() throws Exception {
         LocalDateTime nacimiento = LocalDateTime.now();
 
-        Human juan = Human.llamado("Juan")
-                .deProfesion("Ingeniero en sistemas")
+        Human juan = HumanConstructor.unAlienigena()
+                .llamado("Juan")
                 .deEtnia("Afroamericano")
                 .suComidaFavorita("Pizza")
                 .nacidoEn(nacimiento);
