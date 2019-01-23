@@ -32,7 +32,7 @@ public class Dog {
         return color;
     }
 
-    public static DogBreeder called(String name) {
+    public static WithBreed called(String name) {
         return new DogBreeder(name);
     }
 
