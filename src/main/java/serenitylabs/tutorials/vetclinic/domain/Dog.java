@@ -8,12 +8,16 @@ public class Dog {
     private final LocalDate theFourthOfJuly;
     private final String breed;
     private final String color;
+    private final String favoriteFood;
+    private String favoriteToy;
 
-    public Dog(String name, LocalDate theFourthOfJuly, String breed, String color) {
+    public Dog(String name, LocalDate theFourthOfJuly, String breed, String color, String favoriteFood, String favoriteToy) {
         this.name = name;
         this.theFourthOfJuly = theFourthOfJuly;
         this.breed = breed;
         this.color = color;
+        this.favoriteFood = favoriteFood;
+        this.favoriteToy = favoriteToy;
     }
 
     public String getName() {
@@ -30,6 +34,14 @@ public class Dog {
 
     public String getColor() {
         return color;
+    }
+
+    public String getFavoriteFood() {
+        return favoriteFood;
+    }
+
+    public String getFavoriteToy() {
+        return favoriteToy;
     }
 
     public static WithBreed called(String name) {
@@ -50,6 +62,8 @@ public class Dog {
         private String breed;
         private LocalDate theFourthOfJuly;
         private String color;
+        private String favoriteFood;
+        private String favoriteToy;
 
         public DogBreeder(String name){
             this.name = name;
@@ -66,9 +80,18 @@ public class Dog {
         }
 
         public Dog BornOn(LocalDate theFourthOfJuly) {
-            return new Dog(name,theFourthOfJuly,breed,color);
+            return new Dog(name,theFourthOfJuly,breed,color,favoriteFood,favoriteToy);
         }
 
 
+        public DogBreeder OfFavoriteFood(String favoriteFood) {
+            this.favoriteFood = favoriteFood;
+            return this;
+        }
+
+        public DogBreeder OfFavoriteToy(String favoriteToy) {
+            this.favoriteToy = favoriteToy;
+            return this;
+        }
     }
 }
