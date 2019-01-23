@@ -12,13 +12,13 @@ public class WhenWeCreateANewDog {
     @Test
     public void a_new_dog_should_have_a_name() throws Exception {
 
-        Dog juan = Dog.called("Fido")
-                      .OfBreed("Poodle")
+        Dog juan = DogBreeder.aFish()
+                      .called("Carlos")
                       .OfColor("Negro")
                       .BornOn(THE_FOURTH_OF_JULY);
 
-        Assert.assertEquals("Fido", juan.getName());
-        Assert.assertEquals("Poodle", juan.getBreed());
+        Assert.assertEquals("Carlos", juan.getName());
+        Assert.assertEquals("Vagre", juan.getBreed());
         Assert.assertEquals("Negro", juan.getColor());
         Assert.assertEquals(THE_FOURTH_OF_JULY, juan.getTheFourthOfJuly());
 
@@ -27,7 +27,8 @@ public class WhenWeCreateANewDog {
     @Test
     public void a_dog_can_have_an_optional_favourite_food()throws Exception {
 
-        Dog juan = Dog.called("Fido")
+        Dog juan = DogBreeder.aDog()
+                .called("Fido")
                 .OfBreed("Poodle")
                 .OfColor("Negro")
                 .OfFavoriteFood("Pizza")
@@ -43,15 +44,15 @@ public class WhenWeCreateANewDog {
     @Test
     public void a_dog_can_have_an_optional_favourite_toy() throws Exception {
 
-        Dog juan = Dog.called("Fido")
-                .OfBreed("Poodle")
+        Dog juan = DogBreeder.aCat()
+                .called("Misifu")
                 .OfColor("Negro")
-                .OfFavoriteToy("Balon")
+                .OfFavoriteToy("cat")
                 .BornOn(THE_FOURTH_OF_JULY);
 
-        Assert.assertEquals("Fido", juan.getName());
-        Assert.assertEquals("Poodle", juan.getBreed());
-        Assert.assertEquals("Balon", juan.getFavoriteToy());
+        Assert.assertEquals("Misifu", juan.getName());
+        Assert.assertEquals("Ragdoll", juan.getBreed());
+        Assert.assertEquals("cat", juan.getFavoriteToy());
         Assert.assertEquals(THE_FOURTH_OF_JULY, juan.getTheFourthOfJuly());
 
     }
